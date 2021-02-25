@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить кампанию</title>
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="js/plugins/select2/css/select2.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/odometer-theme-default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/accordion.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/media.css"/>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/plugins/autosize.js"></script>
+    <script src="js/plugins/select2/js/select2.min.js"></script>
+    <script src="js/plugins/odometer.js"></script>
+    <script src="js/plugins/jquery-ui.min.js"></script>
+    <script src="js/plugins/jquery.maskedinput.min.js"></script>
+    <script src="js/class.Popup.js"></script>
+    <script src="js/class.Pages.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body class="body">
+<header class="header js-top-strip">
+    <div class="container">
+        <a class="logo" href="/" id="logo"></a>
+        <div class="profile">
+            <div class="wrap">
+                <a class="username js-header-popup" href="javascript:void(0)">Konstantin_14</a>
+                <div class="username-popup tip">
+                    <a href="javascript:void(0)" class="item">Профиль</a>
+                    <a href="javascript:void(0)" class="item">Партнерская программа</a>
+                    <a href="/faq/" class="item">Правила и FAQ</a>
+                    <a href="javascript:void(0)" class="item js-support">Техподдержка</a>
+                    <a href="javascript:void(0)" class="item js-exit">Выход</a>
+                </div>
+            </div>
+            <div class="wrap">
+                <a class="balance js-header-popup" href="javascript:void(0)">14 500 <span class="rub">Р</span></a>
+                <div class="balance-popup tip">
+                    <div class="wrapper">
+                        <div class="name">Баланс</div>
+                        <div class="money">14 500 <span class="rub">Р</span></div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="name">Доступно</div>
+                        <div class="money">14 500 <span class="rub">Р</span></div>
+                    </div>
+                    <div class="wrapper">
+                        <div class="name">Блокировано</div>
+                        <div class="money">0 <span class="rub">Р</span></div>
+                    </div>
+                    <a href="javascript:void(0)" class="js-add-money">Пополнить</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="page-wrapper pw lk">
+    <div class="container">
+         <ul class="nav">
+               <li class="active"><a href="javascript:void(0)">Оптимизатор</a></li>
+               <li><a href="javascript:void(0)">Веб-мастер</a></li>
+         </ul>
+         <div class="menu__wrap">
+            <ul class="top-menu">
+                  <li><a href="/lk/my-campaigns/">Мои кампании</a></li>
+                  <li><a href="/lk/post_view/">Обзоры</a></li>
+                  <li><a href="/lk/search/">Поиск площадок</a></li>
+                  <li><a href="/lk/position-and-optimisation/">Позиции + Оптимизация</a></li>
+                  <li><a href="/lk/seo/">SEO-услуги</a></li>
+                  <li><a href="/lk/messages/">Сообщения</a></li>
+                  <div class="menu__close"></div>
+            </ul>
+            <div class="menu-burger" id="menu-burger">
+               <span></span>
+            </div>
+        </div>
+        <div class="alert">
+            <div class="message">
+                <div class="icon"></div>У вас <a href="javascript:void(0)">24 необработанные заявки</a> от вебмастеров
+            </div>
+        </div>
+        <div class="block add-comp">
+            <h1 class="center">Добавление кампании</h1>
+            <div class="conditions">
+                <form action="">
+                    <div class="items">
+                        <div class="item comp">
+                            <div class="name">Название</div>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="text" name="comp_name">
+                                    <span class="question">
+                                        <div class="tip">
+                                            <div class="title">Название кампании</div>
+                                            <div class="text">Название нужно для вашего личного удобства, чтобы различать разные кампании.</div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item type">
+                            <div class="name">Тип обзора</div>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="checkbox" name="contextLink" id="contextLink">
+                                    <label for="contextLink">Контекстная ссылка</label>
+                                    <span class="question">
+                                        <div class="tip">
+                                            <div class="title">Контекстные ссылки</div>
+                                            <div class="text">Вебмастер подбирает место в уже имеющихся статьях или новостях на своем сайте и вставляет в них вашу ссылку.</div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" name="noteLink" id="noteLink">
+                                    <label for="noteLink">Короткие заметки (15-30 слов)</label>
+                                    <span class="question">
+                                        <div class="tip">
+                                            <div class="title">Короткие заметки</div>
+                                            <div class="text">Вебмастер пишет от одного до трех предложений, в которые вставляется ваша ссылка.</div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" name="imageLink" id="imageLink">
+                                    <label for="imageLink">Ссылка-картинка</label>
+                                    <span class="question">
+                                        <div class="tip">
+                                            <div class="title">Ссылки-картинки</div>
+                                            <div class="text">Вебмастер добавляет или использует уже имеющуюся картинку на своем сайте в качестве гиперссылки на ваш сайт. Роль анкора играет тег alt.</div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item address">
+                            <div class="name">Адрес и текст ссылки</div>
+                            <div class="options">
+                                <div class="option-s option">
+                                    <input type="text" name="URL" placeholder="URL">
+                                    <input type="text" name="unchors" placeholder="Анкор (текст ссылки)">
+                                    <span class="question">
+                                        <div class="tip">
+                                            <div class="title">Адрес и текст ссылки</div>
+                                            <div class="text">Укажите адрес и текст ссылки (анкор) продвигаемой страницы. Если вы хотите добавить больше страниц или анкоров, нажмите на "Добавить еще анкоры и URL".</div>
+                                        </div>
+                                    </span>
+                                    <div class="add-more-urls" id="add_more_urls"><a href="javascript:void(0)">Добавить еще анкоры и URL</a></div>
+                                    <input type="checkbox" name="variation_unchor" id="variation_unchor">
+                                    <label for="variation_unchor">Разрешить склонять текст ссылки</label>
+                                    <span class="question">
+                                        <div class="tip">
+                                            <div class="title">Разрешить склонять текст ссылки</div>
+                                            <div class="text">Если разрешить склонять текст ссылки, то, например, наряду с текстом ссылки \"холодильник\" вебмастера смогут использовать \"холодильнику\", \"за холодильником\", \"холодильника\" и так далее. В случае же запрета на склонение текста ссылки вебмастера будут использовать текст ссылки строго в том виде, в котором вы указали.</div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item external">
+                            <div class="name">Внешние показатели</div>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="checkbox" name="ignoreAutoLinks" id="ignoreAutoLinks">
+                                    <label for="ignoreAutoLinks">Не показывать сайты в автобиржах</label>
+                                        <span class="question">
+                                            <div class="tip">
+                                                <div class="title">Игнорировать площадки</div>
+                                                <div class="text">Используя эту опцию, вы можете вывести только те сайты, которые не размещают автоматические ссылки.</div>
+                                            </div>
+                                        </span>
+                                    <br><br>
+                                    Внешних ссылок не более <input type="text" name="max_links">
+                                        <span class="question">
+                                            <div class="tip">
+                                                <div class="title">Количество внешних ссылок на странице</div>
+                                                <div class="text">Определите максимальное количество внешних ссылок на странице, где вы готовы размещать свои ссылки и обзоры. Помните, что 2-4 внешние ссылки на сайтах могут отводиться на счетчики, рейтинги и дружественные проекты.</div>
+                                            </div>
+                                        </span>
+                                    <br>
+                                    Рекомендуется установить от 4 до 7 ссылок
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" name="only_page_new" id="only_page_new">
+                                    <label for="only_page_new">Страницы не в индексе Яндекса</label>
+                                        <span class="question">
+                                            <div class="tip">
+                                                <div class="title">Характер страниц</div>
+                                                <div class="text">Размещаясь на новых страницах не в индексе, можно быть уверенным, что в течение 70 дней они будут проиндексированы, иначе Godspeedlinks возвращает деньги за размещение. В то же время старые проиндексированные страницы, как правило, менее подвержены выпадению.<br><b>Внимание!</b> В общем случае настоятельно рекомендуем использовать оба варианта размещения.</div>
+                                            </div>
+                                        </span>
+                                    <br>
+                                    <input type="checkbox" name="only_page_in_index" id="only_page_in_index">
+                                    <label for="only_page_in_index">Страницы в индексе Яндекса</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="item subject">
+                            <div class="name">Тематика</div>
+                            <div class="options">
+                                <div class="option">
+                                    <input type="checkbox" name="allThemes" id="allThemes">
+                                    <label for="allThemes">Все</label>
+                                </div>
+                                <div class="option">
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="work" id="work">
+                                        <label class="main" for="work">Работа</label>
+                                        <a href="javascript:void(0)" class="theme">Работа</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject1" id="subject1">
+                                                <label for="subject1">Вакансии и резюме</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject2" id="subject2">
+                                                <label for="subject2">Кадровые агентства</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject3" id="subject3">
+                                                <label for="subject3">Работа за рубежом</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject4" id="subject4">
+                                                <label for="subject4">Работа для IT-специалистов</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject5" id="subject5">
+                                                <label for="subject5">Временная и удаленная работа</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject6" id="subject6">
+                                                <label for="subject6">Управление персоналом</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject7" id="subject7">
+                                                <label for="subject7">Работа для студентов</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject8" id="subject8">
+                                                <label for="subject8">Подбор домашнего персонала</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="home" id="home">
+                                        <label class="main" for="home">Дом</label>
+                                        <a href="javascript:void(0)" class="theme">Дом</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject20" id="subject20">
+                                                <label for="subject20">Квартира и дача</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject21" id="subject21">
+                                                <label for="subject21">Кулинария</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject22" id="subject22">
+                                                <label for="subject22">Все для праздника</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject23" id="subject23">
+                                                <label for="subject23">Семья</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject24" id="subject24">
+                                                <label for="subject24">Домашние животные</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject25" id="subject25">
+                                                <label for="subject25">Здоровье</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject26" id="subject26">
+                                                <label for="subject26">Мода и красота</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject27" id="subject27">
+                                                <label for="subject27">Покупки</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="entertaiment" id="entertaiment">
+                                        <label class="main" for="entertaiment">Развлечения</label>
+                                        <a href="javascript:void(0)" class="theme">Развлечения</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject40" id="subject40">
+                                                <label for="subject40">Игры</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject41" id="subject41">
+                                                <label for="subject41">Юмор</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject42" id="subject42">
+                                                <label for="subject42">Непознанное</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject43" id="subject43">
+                                                <label for="subject43">Развлекательные журналы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject44" id="subject44">
+                                                <label for="subject44">Психологические тесты</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject45" id="subject45">
+                                                <label for="subject45">Знакомства</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject46" id="subject46">
+                                                <label for="subject46">Чаты</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject47" id="subject47">
+                                                <label for="subject47">Видеохостинги</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject48" id="subject48">
+                                                <label for="subject48">Где развлечься</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="culture" id="culture">
+                                        <label class="main" for="culture">Культура</label>
+                                        <a href="javascript:void(0)" class="theme">Культура</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject49" id="subject49">
+                                                <label for="subject49">Музыка</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject50" id="subject50">
+                                                <label for="subject50">Литература</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject51" id="subject51">
+                                                <label for="subject51">Кино</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject52" id="subject52">
+                                                <label for="subject52">Театры</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject53" id="subject53">
+                                                <label for="subject53">Фотография</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject54" id="subject54">
+                                                <label for="subject54">Музеи</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject55" id="subject55">
+                                                <label for="subject55">Изобразительные искусства</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject56" id="subject56">
+                                                <label for="subject56">Танец</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="production" id="production">
+                                        <label class="main" for="production">Производство</label>
+                                        <a href="javascript:void(0)" class="theme">Производство</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject57" id="subject57">
+                                                <label for="subject57">Металлургия</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject58" id="subject58">
+                                                <label for="subject58">Машиностроение</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject59" id="subject59">
+                                                <label for="subject59">Оборудование</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject60" id="subject60">
+                                                <label for="subject60">Электроника и электротехника</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject61" id="subject61">
+                                                <label for="subject61">Энергетика</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject62" id="subject62">
+                                                <label for="subject62">Химическая промышленность</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject63" id="subject63">
+                                                <label for="subject63">Предметы потребления</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject64" id="subject64">
+                                                <label for="subject64">Агропром</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="smi" id="smi">
+                                        <label class="main" for="smi">СМИ</label>
+                                        <a href="javascript:void(0)" class="theme">СМИ</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject9" id="subject9">
+                                                <label for="subject9">Периодика</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject10" id="subject10">
+                                                <label for="subject10">Информационные агентства</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject11" id="subject11">
+                                                <label for="subject11">Новости</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject12" id="subject12">
+                                                <label for="subject12">Телевидение</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject13" id="subject13">
+                                                <label for="subject13">Радио</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="bussines" id="bussines">
+                                        <label class="main" for="bussines">Бизнес</label>
+                                        <a href="javascript:void(0)" class="theme">Бизнес</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject28" id="subject28">
+                                                <label for="subject28">Финансы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject29" id="subject29">
+                                                <label for="subject29">Недвижимость</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject30" id="subject30">
+                                                <label for="subject30">Строительство</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject31" id="subject31">
+                                                <label for="subject31">Производство и поставки</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject32" id="subject32">
+                                                <label for="subject32">Реклама</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject33" id="subject33">
+                                                <label for="subject33">Деловые услуги</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject34" id="subject34">
+                                                <label for="subject34">Все для офиса</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="auto" id="auto">
+                                        <label class="main" for="auto">Авто</label>
+                                        <a href="javascript:void(0)" class="theme">Авто</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject65" id="subject65">
+                                                <label for="subject65">Продажа автомобилей</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject66" id="subject66">
+                                                <label for="subject66">Техническое обслуживание</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject67" id="subject67">
+                                                <label for="subject67">Запчасти, аксессуары</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject68" id="subject68">
+                                                <label for="subject68">Подготовка водителей</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject69" id="subject69">
+                                                <label for="subject69">Автопресса</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject70" id="subject70">
+                                                <label for="subject70">Автолюбители</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject71" id="subject71">
+                                                <label for="subject71">Мотоциклы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject72" id="subject72">
+                                                <label for="subject72">Автострахование</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject73" id="subject73">
+                                                <label for="subject73">Автомобиль и закон</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="hi-tech" id="hi-tech">
+                                        <label class="main" for="hi-tech">Hitech</label>
+                                        <a href="javascript:void(0)" class="theme">Hi-tech</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject74" id="subject74">
+                                                <label for="subject74">Hardware</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject75" id="subject75">
+                                                <label for="subject75">Мобильная связь</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject76" id="subject76">
+                                                <label for="subject76">Интернет</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject77" id="subject77">
+                                                <label for="subject77">Программы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject78" id="subject78">
+                                                <label for="subject78">Безопасность</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject79" id="subject79">
+                                                <label for="subject79">Сети и связь</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject80" id="subject80">
+                                                <label for="subject80">Интерфейс</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="ref" id="ref">
+                                        <label class="main" for="ref">Справки</label>
+                                        <a href="javascript:void(0)" class="theme">Справки</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject81" id="subject81">
+                                                <label for="subject81">Энциклопедии</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject82" id="subject82">
+                                                <label for="subject82">Словари</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject83" id="subject83">
+                                                <label for="subject83">Карты</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject84" id="subject84">
+                                                <label for="subject84">Адреса и телефоны</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject85" id="subject85">
+                                                <label for="subject85">Интернет-каталоги</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject86" id="subject86">
+                                                <label for="subject86">Поиск людей</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject87" id="subject87">
+                                                <label for="subject87">Транспорт</label>
+                                            </li>
+
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject88" id="subject88">
+                                                <label for="subject88">Афиша</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject89" id="subject89">
+                                                <label for="subject89">Программы ТВ</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject90" id="subject90">
+                                                <label for="subject90">Погода</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="option">
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="study" id="study">
+                                        <label class="main" for="study">Учеба</label>
+                                        <a href="javascript:void(0)" class="theme">Учеба</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject14" id="subject14">
+                                                <label for="subject14">Высшее образование</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject15" id="subject15">
+                                                <label for="subject15">Курсы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject16" id="subject16">
+                                                <label for="subject16">Среднее образование</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject17" id="subject17">
+                                                <label for="subject17">Науки</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject18" id="subject18">
+                                                <label for="subject18">Учебные материалы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject19" id="subject19">
+                                                <label for="subject19">Универсальное</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="society" id="society">
+                                        <label class="main" for="society">Общество</label>
+                                        <a href="javascript:void(0)" class="theme">Общество</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject91" id="subject91">
+                                                <label for="subject91">Власть</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject92" id="subject92">
+                                                <label for="subject92">Законы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject93" id="subject93">
+                                                <label for="subject93">НКО</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject94" id="subject94">
+                                                <label for="subject94">Политика</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject95" id="subject95">
+                                                <label for="subject95">Религия</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="vacation" id="vacation">
+                                        <label class="main" for="vacation">Отдых</label>
+                                        <a href="javascript:void(0)" class="theme">Отдых</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject96" id="subject96">
+                                                <label for="subject96">Где развлечься...</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject97" id="subject97">
+                                                <label for="subject97">Туризм</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject98" id="subject98">
+                                                <label for="subject98">Каникулы</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject99" id="subject99">
+                                                <label for="subject99">Хобби</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="sport" id="sport">
+                                        <label class="main" for="sport">Спорт</label>
+                                        <a href="javascript:void(0)" class="theme">Спорт</a> <span class="count">(0)</span>
+                                        <ul>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject100" id="subject100">
+                                                <label for="subject100">Футбол</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject101" id="subject101">
+                                                <label for="subject101">Хоккей</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject102" id="subject102">
+                                                <label for="subject102">Баскетбол</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject103" id="subject103">
+                                                <label for="subject103">Теннис</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject104" id="subject104">
+                                                <label for="subject104">Автоспорт</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject105" id="subject105">
+                                                <label for="subject105">Шахматы, шашки</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject106" id="subject106">
+                                                <label for="subject106">Силовые виды спорта</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject107" id="subject107">
+                                                <label for="subject107">Единоборства</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject108" id="subject108">
+                                                <label for="subject108">Летние виды спорта</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject109" id="subject109">
+                                                <label for="subject109">Зимние виды спорта</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject110" id="subject110">
+                                                <label for="subject110">Экстремальный спорт</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject111" id="subject111">
+                                                <label for="subject111">Водный спорт</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject112" id="subject112">
+                                                <label for="subject112">Спортивная пресса</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject113" id="subject113">
+                                                <label for="subject113">Соревнования</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject114" id="subject114">
+                                                <label for="subject114">Спортивные товары</label>
+                                            </li>
+                                            <li class="lvl2">
+                                                <input type="checkbox" name="subject115" id="subject115">
+                                                <label for="subject115">Спортклубы</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-menu">
+                                        <input type="checkbox" name="portal" id="portal">
+                                        <label class="main" for="portal">Порталы</label>
+                                        <a href="javascript:void(0)">Порталы</a> <span class="count">(0)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item comment">
+                            <div class="name">Комментарий</div>
+                            <div class="options-b">
+                                <div class="option">
+                                    <textarea required placeholder="Описание и комментарии к заданию для вебмастера (если требуется)" id="task" class="autosize" rows="3"></textarea>
+                                    <span class="desc">Описание должно быть не более 800 символов</span><br>
+                                    Всего символов: <span class="symbol">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item price">
+                            <div class="name">Цены</div>
+                            <div class="options">
+                                <div class="description">
+                                    Сколько вы готовы платить вебмастерам за размещение обзора? <br>Чем выше оплата,
+                                    тем более качественные сайты будут готовы размещать обзоры с вашими ссылками.
+                                </div>
+                                <div class="options-wrap">
+                                    <div class="option first">
+                                       <div class="el">тИЦ сайта</div>
+                                       <div class="el">От 10 до 40</div>
+                                       <div class="el">От 50 до 100</div>
+                                       <div class="el">От 110 до 300</div>
+                                       <div class="el">От 325 до 800</div>
+                                       <div class="el">От 850 до 1500</div>
+                                       <div class="el">Более 1500</div>
+                                 </div>
+                                 <div class="option">
+                                       <div class="el">Оплата контекстной ссылки</div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="29" value="29"><span class="average">(в среднем 297)</span><span class="proc red">-90%</span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="368" value="368"><span class="average">(в среднем 368)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="466" value="466"><span class="average">(в среднем 466)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="648" value="648"><span class="average">(в среднем 648)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="761" value="761"><span class="average">(в среднем 761)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="969" value="969"><span class="average">(в среднем 969)</span><span class="proc"></span></div>
+                                 </div>
+                                 <div class="option">
+                                       <div class="el">Оплата заметки</div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="275" value="275"><span class="average">(в среднем 275)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="356" value="356"><span class="average">(в среднем 356)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="462" value="462"><span class="average">(в среднем 462)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="800" value="800"><span class="average">(в среднем 647)</span><span class="proc green">+24%</span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="788" value="788"><span class="average">(в среднем 788)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="1012" value="1012"><span class="average">(в среднем 1012)</span><span class="proc"></span></div>
+                                 </div>
+                                 <div class="option">
+                                       <div class="el">Оплата ссылки-картинки</div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="221" value="221"><span class="average">(в среднем 221)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="290" value="290"><span class="average">(в среднем 290)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="379" value="379"><span class="average">(в среднем 379)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="544" value="544"><span class="average">(в среднем 544)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="611" value="611"><span class="average">(в среднем 611)</span><span class="proc"></span></div>
+                                       <div class="el"><input type="text" name="link[]" data-avg="783" value="783"><span class="average">(в среднем 783)</span><span class="proc"></span></div>
+                                 </div>
+                                </div>
+                                <div class="allCompanies">
+                                    <input type="checkbox" name="set_prices_to_all" id="set_prices_to_all">
+                                    <label for="set_prices_to_all">Установить эти цены для всех кампаний</label>
+                                <span class="question">
+                                    <div class="tip">
+                                        <div class="title">Установить эти цены для всех кампаний</div>
+                                        <div class="text">Если в Godspeedlinks у вас несколько кампаний, и вы хотите одновременно поменять цены для всех них, то поставьте эту галочку. Указанные вами цены будут применены ко всем вашим кампаниям, включая закрытые кампании.</div>
+                                    </div>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" class="button" value="Готово" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup-back">
+    <div class="popup flip add-money">
+        <div class="content">
+            <a href="javascript:void(0)" class="close js-close"></a>
+            <div class="title h2">Пополнение счета</div>
+            <div class="text">
+                <span>Самый экономичный способ пополнения баланса - Webmoney.<br>
+                    Пополнение происходит без посредников, а комиссия Webmoney всего 0.8%.
+                </span>
+            </div>
+            <form class="form add-money">
+                <div class="params">
+                    <div class="item">
+                        <div class="name">Способ</div>
+                        <div class="choise">
+                            <div class="select">
+                                <select name="addMoney" id="addMoney" class="filter-select cs-select">
+                                    <optgroup label="Электронный кошелек">
+                                        <option id="payopt_webmoney_webmoney" value="webmoney" data-type="webmoney">WebMoney</option>
+                                        <option id="payopt_unitpay_yandex" value="yandex" data-type="unitpay">Яндекс.Деньги</option>
+                                        <option id="payopt_unitpay_qiwi" value="qiwi" data-type="unitpay">QIWI Кошелек</option>
+                                    </optgroup>
+                                    <optgroup label="Банковские карты и безнал">
+                                        <option id="payopt_unitpay_card" value="card" data-type="unitpay">Банковская карта</option>
+                                        <option id="payopt_bank_bank" value="bank" data-type="bank">Безнал для юрлиц и ИП</option>
+                                        <option id="payopt_unitpay_alfaClick" value="alfaClick" data-type="unitpay">Альфа-Клик</option>
+                                    </optgroup>
+                                    <optgroup label="Оплата с телефона">
+                                        <option id="payopt_unitpay_mc_mts" value="mc:mts" data-type="unitpay">МТС</option>
+                                        <option id="payopt_unitpay_mc_mf" value="mc:mf" data-type="unitpay">Мегафон</option>
+                                        <option id="payopt_unitpay_mc_beeline" value="mc:beeline" data-type="unitpay">Билайн</option>
+                                        <option id="payopt_unitpay_mc_tele2" value="mc:tele2" data-type="unitpay">Теле 2</option>
+                                        <option id="payopt_unitpay_sms" value="sms" data-type="unitpay">SMS</option>
+                                    </optgroup>
+                                    <optgroup label="Наличные">
+                                        <option id="payopt_unitpay_cash_svyaznoy" value="cash:svyaznoy" data-type="unitpay">Связной</option>
+                                        <option id="payopt_unitpay_cash_euroset" value="cash:euroset" data-type="unitpay">Евросеть</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">Валюта</div>
+                        <div class="choise">
+                            <div class="select">
+                                <select name="addMoneyVal" id="addMoneyVal" class="filter-select cs-select">
+                                    <option value="wmr">WMR</option>
+                                    <option value="wmz">WMZ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="name">Сумма</div>
+                        <div class="choise">
+                            <input type="text" class="text-input" />
+                        </div>
+                    </div>
+                    <input type="submit" class="button js-submit" value="Выполнить платеж" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="popup-back">
+    <div class="popup flip support">
+        <div class="content">
+            <form class="form on-popup support" >
+                <div class="message-wrap">
+                    <div class="main-message">
+                        <a href="javascript:void(0)" class="close js-close"></a>
+                        <input type="text" class="text-input" placeholder="Ваше имя"/>
+                        <div class="js-wrapper">
+                            <input type="email" required class="text-input" placeholder="E-mail" id="popupEmail"/>
+                            <label for="popupEmail"></label>
+                        </div>
+                        <div class="js-wrapper">
+                            <textarea required placeholder="Оставьте своё сообщение" id="textarea" class="autosize" rows="8"></textarea>
+                            <label for="textarea"></label>
+                        </div>
+                        <input type="submit" class="button js-submit" value="Отправить" />
+                    </div>
+                    <div class="result-message">
+                        <div class="result">
+                            <div class="text">Ваше сообщение<br>отправлено!</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-circle"></div>
+    <div class="container">
+        <a href="https://www.facebook.com/" target="_blank" class="facebook"></a>
+        <ul class="menu">
+            <li><a href="/about">О проекте</a></li>
+            <li><a href="/faq">Правила/Частые вопросы</a></li>
+            <li><a href="/blog">Блог Godspeedlinks</a></li>
+            <li><a href="javascript:void(0)" class="js-support">Техподдержка</a></li>
+            
+        </ul>
+        <div class="copyright">
+          <div class="about-project center">2021 Godspeedlinks<br>
+          </div>
+      </div>
+
+  </div>
+</footer> 
+</body>
+</html>
